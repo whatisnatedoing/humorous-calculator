@@ -1,0 +1,70 @@
+.display-container {
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  padding: 35px 25px;
+  text-align: right;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  border-bottom: 2px solid #6c5ce7;
+}
+
+.previous-value {
+  font-size: 26px;
+  color: #a29bfe;
+  margin-bottom: 12px;
+  min-height: 32px;
+  opacity: 0.7;
+}
+
+.display-value {
+  font-size: 56px;
+  font-weight: 300;
+  color: #ffffff;
+  word-wrap: break-word;
+  word-break: break-all;
+  line-height: 1.2;
+}
+
+
+
+.time-message {
+  position: absolute;
+  bottom: 15px;
+  left: 25px;
+  font-size: 13px;
+  color: #74b9ff;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .display-container {
+    padding: 30px 20px;
+    min-height: 120px;
+  }
+
+  .display-value {
+    font-size: 48px;
+  }
+  
+  .previous-value {
+    font-size: 22px;
+  }
+
+  .easter-egg-message {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}

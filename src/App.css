@@ -1,0 +1,164 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.app.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.settings-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.settings-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.calculator {
+  background: #1a1a2e;
+  border-radius: 25px;
+  box-shadow: 0 25px 70px rgba(138, 43, 226, 0.3);
+  overflow: hidden;
+  width: 100%;
+  max-width: 380px;
+  border: 2px solid #6c5ce7;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 25px;
+  background: #16213e;
+}
+
+.calculator-fact {
+  margin-top: 20px;
+  padding: 15px 25px;
+  background: rgba(108, 92, 231, 0.2);
+  border: 1px solid #6c5ce7;
+  border-radius: 15px;
+  color: #a29bfe;
+  font-size: 14px;
+  max-width: 380px;
+  text-align: center;
+  animation: slideIn 0.5s ease;
+}
+
+.footer {
+  margin-top: 30px;
+  color: #a29bfe;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.achievement-count {
+  color: #ffeaa7;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+/* Nigerian Pidgin Message - Above Calculator */
+.pidgin-message {
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  color: #2d3436;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(253, 203, 110, 0.4);
+  border: 2px solid #fdcb6e;
+  animation: bounceIn 0.4s ease;
+  line-height: 1.4;
+  word-wrap: break-word;
+  white-space: normal; /* Allows text to wrap */
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  50% {
+    transform: translateY(5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .calculator {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+  
+  .button-grid {
+    gap: 10px; /* Reduced gap for mobile */
+    padding: 15px; /* Equal padding on all sides */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ensure 4 equal columns */
+    justify-items: center; /* Center buttons horizontally */
+    align-items: center; /* Center buttons vertically */
+  }
+
+  .settings-toggle {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .pidgin-message {
+    font-size: 13px;
+    padding: 10px 16px;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
